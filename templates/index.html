@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Kansas City Public Library</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+
+<img src=
+"../static/download.png"
+         alt="zomato image", width="150", height="150", style="float:left">
+
+         <h1> Kansas City Public Library</h1>
+         <h4>Predictive Model for Estimating Library Patrons Traffic</h4>
+
+<style>
+body {
+  
+  background-image: url("../static/pexels-ann-h-1765033.jpg");
+  background-position: 100%;
+  background-size: cover;
+  
+}
+</style>
+
+
+
+ <div class="login">
+	<h1>Predict Patrons Traffic Flow</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+
+     ss
+
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="Month" placeholder="Month: 1" required="required" />
+      <input type="text" name="Day of the week" placeholder="Day of the week: 6" required="required" />
+      <input type="text" name="Day" placeholder="Day: 26" required="required" />
+      <input type="text" name="Hour" placeholder="Hour: 9" required="required" />
+      <!-- <select name="dealer">
+        <option value="">Select Branch</option>
+        <option value="Tom Smith">Central</option>
+        <option value="Karen Swanson">Plaza</option>
+        <option value="Jim Johnson">Bluford</option>
+        <option value="Shauna Gifford">Waldo</option>
+        <option value="Shauna Gifford">North East</option>
+        <option value="Shauna Gifford">South East</option>
+        <option value="Shauna Gifford">Ruiz</option>
+        <option value="Shauna Gifford">Sugar Creek</option>
+        <option value="Shauna Gifford">Westport</option>
+        <option value="Shauna Gifford">Trails</option>
+      </select> -->
+      
+        
+        
+        
+        <input type="text" name="Branch" placeholder="Branch: 5" required="required" />
+    	  
+        <input type="text" name="Percitation" placeholder="Percitation: 0" required="required" />
+        <input type="text" name="Snow" placeholder="Snow: 2" required="required" />
+        <!-- <input type="text" name="Snow D" placeholder="Snow Depth (mm): 0" required="required" /> -->
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
